@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app/core/color.dart';
 import 'package:weather_app/core/theme.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -7,8 +8,15 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Image.asset(AppImages.nightStatRain,width: 200,height: 200,),
+      body: Container(
+        decoration: AppColors.buildGradientBoxDecoration(),
+        child: Center(
+          child: Image.asset(
+            AppImages.nightStatRain,
+            width: 200,
+            height: 200,
+          ),
+        ),
       ),
     );
   }
