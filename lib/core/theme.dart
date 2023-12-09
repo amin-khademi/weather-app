@@ -43,7 +43,7 @@ class AppImages {
   static const String map = "$_base/map.png";
   static const String moon = "$_base/moon.png";
   static const String nightRain = "$_base/nightRain.png";
-  static const String nightStatRain = "$_base/nightStatRain.png";
+  static const String nightStarRain = "$_base/nightStatRain.png";
   static const String nightThunder = "$_base/nightThunder.png";
   static const String rainbow = "$_base/rainbow.png";
   static const String starCLear = "$_base/starCLear.png";
