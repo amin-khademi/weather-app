@@ -12,7 +12,7 @@ class SplashScreen extends StatelessWidget {
         decoration: AppColors.buildGradientBoxDecoration(),
         child: Center(
           child: Image.asset(
-            AppImages.nightStatRain,
+            AppImages.nightStarRain,
             width: 200,
             height: 200,
           ),
