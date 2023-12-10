@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:weather_app/core/color.dart';
 import 'package:weather_app/view/widget/app.bar.dart';
+import 'package:weather_app/view/widget/location.dart';
 import 'package:weather_app/viewModel/controller/home.controller.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -18,13 +19,19 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Container(
         decoration: AppColors.buildGradientBoxDecoration(),
-        child: const Scaffold(
+        child: Scaffold(
           backgroundColor: Colors.transparent,
           body: SafeArea(
               child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
-              children: [CustomAppBar()],
+              children: [
+                const SizedBox(
+                  height: 20,
+                ),
+                const CustomAppBar(),
+                Location()
+              ],
             ),
           )),
         ));

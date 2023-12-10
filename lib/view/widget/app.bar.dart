@@ -12,7 +12,7 @@ class CustomAppBar extends StatelessWidget {
           padding: EdgeInsets.all(8),
           child: Icon(
             Icons.menu,
-            color: Colors.grey,
+            color: Colors.white,
           ),
         ),
         const SizedBox(
@@ -22,7 +22,7 @@ class CustomAppBar extends StatelessWidget {
           padding: EdgeInsets.all(8),
           child: Icon(
             Icons.notifications_none_rounded,
-            color: Colors.grey,
+            color: Colors.white,
           ),
         ),
         const Spacer(),
