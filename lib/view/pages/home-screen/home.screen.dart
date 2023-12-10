@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:weather_app/core/color.dart';
+import 'package:weather_app/view/pages/next-day/next-14-days.dart';
 import 'package:weather_app/view/widget/app.bar.dart';
 import 'package:weather_app/view/widget/card.info.dart';
 import 'package:weather_app/view/widget/container.list.dart';
@@ -40,7 +41,37 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: CardInfo(),
                   ),
                 ),
-                ContainerList()
+                ContainerList(),
+                const SizedBox(
+                  height: 20,
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Get.to(const NextDays());
+                  },
+                  child: const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 10),
+                    child: Row(
+                      children: [
+                        Text(
+                          "Today",
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 25),
+                        ),
+                        Spacer(),
+                        Text(
+                          "Next 14 Days",
+                          style: TextStyle(
+                              color: Colors.deepPurple,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18),
+                        )
+                      ],
+                    ),
+                  ),
+                )
               ],
             ),
           ),
