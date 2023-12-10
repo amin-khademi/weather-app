@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:weather_app/core/color.dart';
 import 'package:weather_app/view/widget/app.bar.dart';
+import 'package:weather_app/view/widget/card.info.dart';
 import 'package:weather_app/view/widget/location.dart';
 import 'package:weather_app/viewModel/controller/home.controller.dart';
 
@@ -30,7 +31,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   height: 20,
                 ),
                 const CustomAppBar(),
-                Location()
+                Location(),
+                CardInfo()
               ],
             ),
           )),
