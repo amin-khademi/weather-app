@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:weather_app/core/theme.dart';
 import 'package:weather_app/core/utilities.dart';

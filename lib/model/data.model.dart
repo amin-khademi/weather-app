@@ -1,12 +1,12 @@
 class DataModel {
-  int? queryCost;
-  double? latitude;
-  double? longitude;
-  String? resolvedAddress;
-  String? address;
-  String? timezone;
-  double? tzoffset;
-  String? description;
+  dynamic queryCost;
+  dynamic latitude;
+  dynamic longitude;
+  dynamic resolvedAddress;
+  dynamic address;
+  dynamic timezone;
+  dynamic tzoffset;
+  dynamic description;
   List<Days>? days;
   List<Null>? alerts;
   Stations? stations;
@@ -82,42 +82,42 @@ class DataModel {
 }
 
 class Days {
-  String? datetime;
-  int? datetimeEpoch;
-  double? tempmax;
-  double? tempmin;
-  double? temp;
-  double? feelslikemax;
-  double? feelslikemin;
-  double? feelslike;
-  double? dew;
-  double? humidity;
-  double? precip;
-  double? precipprob;
-  double? precipcover;
-  List<String>? preciptype;
-  double? snow;
-  double? snowdepth;
-  double? windgust;
-  double? windspeed;
-  double? winddir;
-  double? pressure;
-  double? cloudcover;
-  double? visibility;
-  double? solarradiation;
-  double? solarenergy;
-  int? uvindex;
-  int? severerisk;
-  String? sunrise;
-  int? sunriseEpoch;
-  String? sunset;
-  int? sunsetEpoch;
-  double? moonphase;
-  String? conditions;
-  String? description;
-  String? icon;
-  List<String>? stations;
-  String? source;
+  dynamic datetime;
+  dynamic datetimeEpoch;
+  dynamic tempmax;
+  dynamic tempmin;
+  dynamic temp;
+  dynamic feelslikemax;
+  dynamic feelslikemin;
+  dynamic feelslike;
+  dynamic dew;
+  dynamic humidity;
+  dynamic precip;
+  dynamic precipprob;
+  dynamic precipcover;
+  List<dynamic>? preciptype;
+  dynamic snow;
+  dynamic snowdepth;
+  dynamic windgust;
+  dynamic windspeed;
+  dynamic winddir;
+  dynamic pressure;
+  dynamic cloudcover;
+  dynamic visibility;
+  dynamic solarradiation;
+  dynamic solarenergy;
+  dynamic uvindex;
+  dynamic severerisk;
+  dynamic sunrise;
+  dynamic sunriseEpoch;
+  dynamic sunset;
+  dynamic sunsetEpoch;
+  dynamic moonphase;
+  dynamic conditions;
+  dynamic description;
+  dynamic icon;
+  List<dynamic>? stations;
+  dynamic source;
   List<Hours>? hours;
 
   Days(
@@ -173,7 +173,7 @@ class Days {
     precip = json['precip'];
     precipprob = json['precipprob'];
     precipcover = json['precipcover'];
-    preciptype = json['preciptype'].cast<String>();
+    preciptype = json['preciptype'];
     snow = json['snow'];
     snowdepth = json['snowdepth'];
     windgust = json['windgust'];
@@ -194,7 +194,7 @@ class Days {
     conditions = json['conditions'];
     description = json['description'];
     icon = json['icon'];
-    stations = json['stations'].cast<String>();
+    stations = json['stations'];
     source = json['source'];
     if (json['hours'] != null) {
       hours = <Hours>[];
@@ -250,31 +250,31 @@ class Days {
 }
 
 class Hours {
-  String? datetime;
-  int? datetimeEpoch;
-  double? temp;
-  double? feelslike;
-  double? humidity;
-  double? dew;
-  double? precip;
-  double? precipprob;
-  double? snow;
-  double? snowdepth;
-  List<String>? preciptype;
-  double? windgust;
-  double? windspeed;
-  double? winddir;
-  double? pressure;
-  double? visibility;
-  double? cloudcover;
-  double? solarradiation;
-  double? solarenergy;
-  int? uvindex;
-  int? severerisk;
-  String? conditions;
-  String? icon;
-  List<String>? stations;
-  String? source;
+  dynamic datetime;
+  dynamic datetimeEpoch;
+  dynamic temp;
+  dynamic feelslike;
+  dynamic humidity;
+  dynamic dew;
+  dynamic precip;
+  dynamic precipprob;
+  dynamic snow;
+  dynamic snowdepth;
+  List<dynamic>? preciptype;
+  dynamic windgust;
+  dynamic windspeed;
+  dynamic winddir;
+  dynamic pressure;
+  dynamic visibility;
+  dynamic cloudcover;
+  dynamic solarradiation;
+  dynamic solarenergy;
+  dynamic uvindex;
+  dynamic severerisk;
+  dynamic conditions;
+  dynamic icon;
+  List<dynamic>? stations;
+  dynamic source;
 
   Hours(
       {this.datetime,
@@ -314,7 +314,7 @@ class Hours {
     precipprob = json['precipprob'];
     snow = json['snow'];
     snowdepth = json['snowdepth'];
-    preciptype = json['preciptype'].cast<String>();
+    preciptype = json['preciptype'];
     windgust = json['windgust'];
     windspeed = json['windspeed'];
     winddir = json['winddir'];
@@ -327,7 +327,7 @@ class Hours {
     severerisk = json['severerisk'];
     conditions = json['conditions'];
     icon = json['icon'];
-    stations = json['stations'].cast<String>();
+    stations = json['stations'];
     source = json['source'];
   }
 
@@ -391,14 +391,14 @@ class Stations {
 }
 
 class OIIE {
-  int? distance;
-  double? latitude;
-  double? longitude;
-  int? useCount;
-  String? id;
-  String? name;
-  int? quality;
-  int? contribution;
+  dynamic distance;
+  dynamic latitude;
+  dynamic longitude;
+  dynamic useCount;
+  dynamic id;
+  dynamic name;
+  dynamic quality;
+  dynamic contribution;
 
   OIIE(
       {this.distance,
@@ -436,35 +436,35 @@ class OIIE {
 }
 
 class CurrentConditions {
-  String? datetime;
-  int? datetimeEpoch;
-  double? temp;
-  double? feelslike;
-  double? humidity;
-  double? dew;
+  dynamic datetime;
+  dynamic datetimeEpoch;
+  dynamic temp;
+  dynamic feelslike;
+  dynamic humidity;
+  dynamic dew;
   Null? precip;
-  int? precipprob;
-  int? snow;
-  int? snowdepth;
+  dynamic precipprob;
+  dynamic snow;
+  dynamic snowdepth;
   Null? preciptype;
   Null? windgust;
-  int? windspeed;
-  int? winddir;
-  int? pressure;
-  int? visibility;
-  double? cloudcover;
-  int? solarradiation;
-  int? solarenergy;
-  int? uvindex;
-  String? conditions;
-  String? icon;
-  List<String>? stations;
-  String? source;
-  String? sunrise;
-  int? sunriseEpoch;
-  String? sunset;
-  int? sunsetEpoch;
-  double? moonphase;
+  dynamic windspeed;
+  dynamic winddir;
+  dynamic pressure;
+  dynamic visibility;
+  dynamic cloudcover;
+  dynamic solarradiation;
+  dynamic solarenergy;
+  dynamic uvindex;
+  dynamic conditions;
+  dynamic icon;
+  List<dynamic>? stations;
+  dynamic source;
+  dynamic sunrise;
+  dynamic sunriseEpoch;
+  dynamic sunset;
+  dynamic sunsetEpoch;
+  dynamic moonphase;
 
   CurrentConditions(
       {this.datetime,
@@ -520,7 +520,7 @@ class CurrentConditions {
     uvindex = json['uvindex'];
     conditions = json['conditions'];
     icon = json['icon'];
-    stations = json['stations'].cast<String>();
+    stations = json['stations'];
     source = json['source'];
     sunrise = json['sunrise'];
     sunriseEpoch = json['sunriseEpoch'];
