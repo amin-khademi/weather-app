@@ -25,4 +25,28 @@ class DaysController extends GetxController {
         : Utilities()
             .imageMap[homeController.model.value!.days![index].conditions]!;
   }
+
+  String getMonth(int index) {
+    String date = homeController.model.value!.days![index].datetime.toString();
+    return Utilities.extractDate(date);
+  }
+
+  String getMonthDay(int index) {
+    String date = homeController.model.value!.days![index].datetime.toString();
+    return Utilities.extractDate(date);
+  }
+
+  String getDate(int index) {
+    DateTime date = DateTime.parse(
+        homeController.model.value!.days![index].datetime.toString());
+    return Utilities.formatDate(date);
+  }
+
+  String getMinTemp(int index) {
+    return "${homeController.model.value!.days![index].tempmin!.toInt().toString()}\u00B0";
+  }
+
+  String getMaxTemp(int index) {
+    return "${homeController.model.value!.days![index].tempmax!.toInt().toString()}\u00B0";
+  }
 }
