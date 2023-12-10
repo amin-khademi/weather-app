@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:weather_app/core/theme.dart';
 import 'package:weather_app/core/utilities.dart';
 import 'package:weather_app/viewModel/controller/home.controller.dart';
 
@@ -23,13 +24,13 @@ class CardInfo extends StatelessWidget {
               borderRadius: BorderRadius.circular(20),
               gradient: LinearGradient(colors: [
                 Colors.blue.withOpacity(0.3),
-                Colors.blue.withOpacity(0.4),
+                Colors.blue.withOpacity(0.6),
                 Colors.blue.withOpacity(0.3),
               ], begin: Alignment.topLeft, end: Alignment.bottomRight),
             ),
           ),
           Positioned(
-            top: -10,
+            top: 0,
             left: 10,
             child: Obx(
               () => Image.asset(
@@ -56,7 +57,7 @@ class CardInfo extends StatelessWidget {
                         fontSize: 23),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 5,
                 ),
                 Text(
@@ -66,6 +67,64 @@ class CardInfo extends StatelessWidget {
                       color: Colors.white.withOpacity(0.8),
                       fontWeight: FontWeight.bold,
                       fontSize: 15),
+                )
+              ],
+            ),
+          ),
+          Positioned(
+            top: 30,
+            right: 0,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                ShaderMask(
+                  shaderCallback: (bounds) {
+                    return LinearGradient(
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                        colors: [
+                          Colors.white,
+                          Colors.white.withOpacity(0.1)
+                        ]).createShader(bounds);
+                  },
+                  child: Obx(
+                    () => Text(
+                      controller.getCurrentTemp(),
+                      style: const TextStyle(
+                          fontSize: 60,
+                          height: 0,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white),
+                    ),
+                  ),
+                ),
+                Obx(
+                  () => Text(
+                    "Feel like ${controller.getFeelLike()}",
+                    style: const TextStyle(
+                        color: Colors.white, fontWeight: FontWeight.bold),
+                  ),
+                ),
+                Positioned(
+                  bottom: 20,
+                  right: 0,
+                  child: ShaderMask(
+                    shaderCallback: (Rect bounds) {
+                      return LinearGradient(
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                        colors: [
+                          Colors.white,
+                          Colors.white.withOpacity(0.1),
+                        ],
+                      ).createShader(bounds);
+                    },
+                    child: Image.asset(
+                      AppImages.windwave,
+                      height: 100,
+                      width: 200,
+                    ),
+                  ),
                 )
               ],
             ),

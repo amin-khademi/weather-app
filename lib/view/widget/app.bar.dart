@@ -30,8 +30,8 @@ class CustomAppBar extends StatelessWidget {
             padding: const EdgeInsets.all(8),
             child: Image.asset(
               AppImages.nightRain,
-              height: 30,
-              width: 30,
+              height: 40,
+              width: 40,
             ))
       ],
     );

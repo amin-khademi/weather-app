@@ -20,14 +20,14 @@ class Location extends StatelessWidget {
               controller.getAddress(),
               style: const TextStyle(
                   height: 0,
-                  color: Colors.black,
+                  color: Colors.white,
                   fontWeight: FontWeight.bold,
                   fontSize: 25),
             ),
             Text(
               Utilities.formatDate(DateTime.now()),
               style: TextStyle(
-                  color: Colors.grey.withOpacity(0.7),
+                  color: Colors.white54,
                   fontWeight: FontWeight.bold),
             )
           ],

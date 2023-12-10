@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:weather_app/core/color.dart';
 import 'package:weather_app/view/widget/app.bar.dart';
 import 'package:weather_app/view/widget/card.info.dart';
+import 'package:weather_app/view/widget/container.list.dart';
 import 'package:weather_app/view/widget/location.dart';
 import 'package:weather_app/viewModel/controller/home.controller.dart';
 
@@ -19,11 +20,11 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        decoration: AppColors.buildGradientBoxDecoration(),
-        child: Scaffold(
-          backgroundColor: Colors.transparent,
-          body: SafeArea(
-              child: Padding(
+      decoration: AppColors.buildGradientBoxDecoration(),
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        body: SafeArea(
+          child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
               children: [
@@ -32,10 +33,19 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 const CustomAppBar(),
                 Location(),
-                CardInfo()
+                Hero(
+                  tag: "TAG",
+                  child: Material(
+                    color: Colors.transparent,
+                    child: CardInfo(),
+                  ),
+                ),
+                ContainerList()
               ],
             ),
-          )),
-        ));
+          ),
+        ),
+      ),
+    );
   }
 }
