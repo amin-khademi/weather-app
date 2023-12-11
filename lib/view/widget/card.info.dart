@@ -30,13 +30,13 @@ class CardInfo extends StatelessWidget {
             ),
           ),
           Positioned(
-            top: 0,
+            top: 30,
             left: 10,
             child: Obx(
               () => Image.asset(
                 controller.getImage(controller.currentIndex.value),
-                height: 150,
-                width: 170,
+                height: 100,
+                width: 120,
                 fit: BoxFit.fill,
               ),
             ),
@@ -84,7 +84,7 @@ class CardInfo extends StatelessWidget {
                         end: Alignment.bottomCenter,
                         colors: [
                           Colors.white,
-                          Colors.white.withOpacity(0.1)
+                          Colors.white.withOpacity(0.8)
                         ]).createShader(bounds);
                   },
                   child: Obx(
@@ -115,7 +115,7 @@ class CardInfo extends StatelessWidget {
                         end: Alignment.bottomCenter,
                         colors: [
                           Colors.white,
-                          Colors.white.withOpacity(0.1),
+                          Colors.white.withOpacity(0.8),
                         ],
                       ).createShader(bounds);
                     },

@@ -26,21 +26,23 @@ class Location extends StatelessWidget {
             ),
             Text(
               Utilities.formatDate(DateTime.now()),
-              style: TextStyle(
-                  color: Colors.white54,
-                  fontWeight: FontWeight.bold),
+              style: const TextStyle(
+                  color: Colors.white54, fontWeight: FontWeight.bold),
             )
           ],
         ),
         const Spacer(),
-         SizedBox(
+        SizedBox(
           height: 150,
           width: 150,
           child: Padding(
             padding: const EdgeInsets.all(20.0),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(20),
-              child: Image.asset(AppImages.map,fit: BoxFit.cover,),
+              child: Image.asset(
+                AppImages.map,
+                fit: BoxFit.cover,
+              ),
             ),
           ),
         )

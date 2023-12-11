@@ -11,7 +11,7 @@ class ContainerList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 30),
+      padding: const EdgeInsets.symmetric(horizontal: 30),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -19,21 +19,21 @@ class ContainerList extends StatelessWidget {
             () => SmallContainer(
                 text: "${controller.getCloudOver()}%",
                 image: AppImages.heavyRain,
-                color: Colors.black54,
+                color: Colors.black26,
                 textColor: Colors.white),
           ),
           Obx(
             () => SmallContainer(
                 text: "${controller.getCloudOver()}km/h",
                 image: AppImages.wind,
-                color: Colors.black54,
+                color: Colors.black26,
                 textColor: Colors.white),
           ),
           Obx(
             () => SmallContainer(
                 text: "${controller.getCloudOver()}%",
                 image: AppImages.sun,
-                color: Colors.black54,
+                color: Colors.black26,
                 textColor: Colors.white),
           )
         ],

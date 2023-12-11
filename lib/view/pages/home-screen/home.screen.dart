@@ -56,7 +56,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         Text(
                           "Today",
                           style: TextStyle(
-                              color: Colors.black,
+                              color: Colors.white,
                               fontWeight: FontWeight.bold,
                               fontSize: 25),
                         ),
@@ -64,7 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         Text(
                           "Next 14 Days",
                           style: TextStyle(
-                              color: Colors.deepPurple,
+                              color: Colors.white60,
                               fontWeight: FontWeight.bold,
                               fontSize: 18),
                         )
