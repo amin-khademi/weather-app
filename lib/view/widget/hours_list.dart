@@ -30,32 +30,50 @@ class HoursList extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(50),
                     ),
-                    child: Obx(() => Container(
-                          height: 130,
-                          width: 80,
-                          padding: EdgeInsets.symmetric(vertical: 10),
-                          decoration: BoxDecoration(
-                            color: controller.compareIndex(index)
-                                ? Colors.blue
-                                : Colors.white70,
-                            borderRadius: BorderRadius.circular(50),
-                          ),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Obx(
-                                () => Text(
-                                  controller.getHour(index),
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      color: controller.compareIndex(index)
-                                          ? Colors.white
-                                          : Colors.grey),
-                                ),
-                              )
-                            ],
-                          ),
-                        )),
+                    child: Obx(
+                      () => Container(
+                        height: 130,
+                        width: 80,
+                        padding: EdgeInsets.symmetric(vertical: 10),
+                        decoration: BoxDecoration(
+                          color: controller.compareIndex(index)
+                              ? Colors.blue
+                              : Colors.white70,
+                          borderRadius: BorderRadius.circular(50),
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Obx(
+                              () => Text(
+                                controller.getHour(index),
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: controller.compareIndex(index)
+                                        ? Colors.white
+                                        : Colors.grey),
+                              ),
+                            ),
+                            Obx(
+                              () => Image.asset(
+                                controller.getImage(index),
+                                height: 50,
+                                width: 50,
+                              ),
+                            ),
+                            Text(
+                              "${controller.model.value!.days![0].hours![index].temp.toInt()}\u00B0",
+                              style: TextStyle(
+                                  color: controller.compareIndex(index)
+                                      ? Colors.white
+                                      : Colors.grey,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20),
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
                   ),
                 )
               ],
