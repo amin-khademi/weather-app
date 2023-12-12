@@ -49,7 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Get.to(const NextDays());
+                      Get.to( NextDays());
                     },
                     child: const Padding(
                       padding: EdgeInsets.symmetric(horizontal: 10),
