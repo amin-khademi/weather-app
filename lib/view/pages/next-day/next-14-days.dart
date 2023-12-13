@@ -3,7 +3,7 @@ import 'package:get/get_core/get_core.dart';
 import 'package:get/get_instance/get_instance.dart';
 import 'package:weather_app/core/color.dart';
 import 'package:weather_app/view/pages/home-screen/home.screen.dart';
-import 'package:weather_app/view/pages/next-day/app.bar.dart';
+import 'package:weather_app/view/pages/next-day/compo/app.bar.dart';
 import 'package:weather_app/viewModel/controller/days.controller.dart';
 
 class NextDays extends StatelessWidget {
@@ -22,15 +22,19 @@ class NextDays extends StatelessWidget {
           child: SizedBox(
             height: size.height,
             width: size.width,
-            child: Stack(
+            child: const Stack(
               alignment: Alignment.center,
               children: [
                 Column(
                   children: [
-                      SizedBox(height: 20,
-                      ),
-                      CustomAppBar()
-                     ],
+                    SizedBox(
+                      height: 20,
+                    ),
+                    CustomAppBar(),
+                    SizedBox(
+                      height: 20,
+                    )
+                  ],
                 )
               ],
             ),
