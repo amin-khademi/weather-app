@@ -49,7 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Get.to( NextDays());
+                      Get.to(NextDays());
                     },
                     child: const Padding(
                       padding: EdgeInsets.symmetric(horizontal: 10),
@@ -74,7 +74,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 20,),
+                  const SizedBox(
+                    height: 20,
+                  ),
                   HoursList()
                 ],
               ),

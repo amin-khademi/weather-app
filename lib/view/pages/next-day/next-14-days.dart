@@ -5,6 +5,7 @@ import 'package:weather_app/core/color.dart';
 import 'package:weather_app/view/pages/home-screen/home.screen.dart';
 import 'package:weather_app/view/pages/next-day/compo/app.bar.dart';
 import 'package:weather_app/view/pages/next-day/compo/days.list.dart';
+import 'package:weather_app/view/widget/bottom.list.dart';
 import 'package:weather_app/viewModel/controller/days.controller.dart';
 
 class NextDays extends StatelessWidget {
@@ -23,21 +24,37 @@ class NextDays extends StatelessWidget {
           child: SizedBox(
             height: size.height,
             width: size.width,
-            child:  Stack(
+            child: Stack(
               alignment: Alignment.center,
               children: [
                 Column(
                   children: [
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
-                    CustomAppBar(),
-                    SizedBox(
+                    const CustomAppBar(),
+                    const SizedBox(
                       height: 20,
                     ),
                     DaysList()
                   ],
-                )
+                ),
+                Positioned(
+                  bottom: 1,
+                  child: Container(
+                    height: size.height / 1.9,
+                    width: size.width,
+                    decoration: const BoxDecoration(
+                      color: Colors.white38,
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(100),
+                        topRight: Radius.circular(100),
+
+                      ),
+                    ),
+                  ),
+                ),
+                BottomList()
               ],
             ),
           ),
