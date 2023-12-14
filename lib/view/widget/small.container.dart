@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_instance/get_instance.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:weather_app/core/theme.dart';
+import 'package:weather_app/viewModel/controller/days.controller.dart';
+import 'package:weather_app/viewModel/controller/home.controller.dart';
 
 class SmallContainer extends StatefulWidget {
   final String text;
@@ -41,6 +47,41 @@ class _SmallContainerState extends State<SmallContainer> {
               fontWeight: FontWeight.bold,
               color: widget.textColor ?? Colors.black),
         )
+      ],
+    );
+  }
+}
+
+class SmallContainerList extends StatelessWidget {
+  SmallContainerList({super.key});
+  final homeController = Get.put(HomeController());
+  final controller = Get.put(DaysController());
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        const Spacer(),
+        Obx(() => SmallContainer(
+              text: "${controller.day.value.precipprob.toString()}%",
+              image: AppImages.heavyRain,
+              color: Colors.white38,
+              textColor: Colors.white,
+            )),
+        const Spacer(),
+        Obx(() => SmallContainer(
+              text: "${controller.day.value.windspeed.toString()}km/h",
+              image: AppImages.wind,
+              color: Colors.white38,
+              textColor: Colors.white,
+            )),
+        const Spacer(),
+        Obx(() => SmallContainer(
+              text: controller.day.value.humidity.toString(),
+              image: AppImages.sun,
+              color: Colors.white38,
+              textColor: Colors.white,
+            )),
+        const Spacer(),
       ],
     );
   }
