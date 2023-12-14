@@ -33,7 +33,7 @@ class DaysController extends GetxController {
 
   String getMonthDay(int index) {
     String date = homeController.model.value!.days![index].datetime.toString();
-    return Utilities.extractDate(date);
+    return Utilities.extractDay(date);
   }
 
   String getDate(int index) {
